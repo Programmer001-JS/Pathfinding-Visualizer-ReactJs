@@ -4,11 +4,11 @@ import Astar from "../astarAlgorithm/astar"
 import "./Pathfind.css"
 
 
-const cols = 25;
+const cols = 10;
 const rows = 10;
 
-const NODE_START_ROW = 0;
-const NODE_START_COL = 0;
+const NODE_START_ROW = 2;
+const NODE_START_COL = 2;
 const NODE_END_ROW = rows - 1;
 const NODE_END_COL = cols - 1;
 
@@ -23,7 +23,7 @@ const Pathfind = () => {
         initializeGrid();
     }, [])
 
-    //CREATES THE GRID
+
     const initializeGrid = () => {
         const grid = new Array(rows);
 
@@ -43,7 +43,7 @@ const Pathfind = () => {
         setVisitedNodes(path.visitedNodes)
     };
 
-    //CREATES THE SPOT
+    
     const createSpot = (grid) => {
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
@@ -60,7 +60,6 @@ const Pathfind = () => {
     };
 
 
-    // CONSTRUCTOR SPOT
     function Spot(i, j) {
         this.x = i;
         this.y = j;
@@ -85,7 +84,7 @@ const Pathfind = () => {
         };
     }
 
-    //GRID WITH NODE
+    
     const gridwithNode = (
         <div>
             {Grid.map((row, rowIndex) => {
